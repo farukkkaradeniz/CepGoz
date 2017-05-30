@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="AnaSayfa"/>
+    <item
+        android:id="@+id/sayfa2"
+        android:orderInCategory="200"
+        android:title="Sayfa2"
+        ></item>
+    <item
+        android:id="@+id/cikis"
+        android:orderInCategory="300"
+        android:title="Çıkış"
+        ></item>
+</menu>

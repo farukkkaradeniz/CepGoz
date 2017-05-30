@@ -1,0 +1,5 @@
+configurations.create("default")
+artifacts.add("default", file('zbar-1.8.2.aar'))
+
+dependencies {
+}

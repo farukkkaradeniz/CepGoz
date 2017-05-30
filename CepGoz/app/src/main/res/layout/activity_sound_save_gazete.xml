@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/back"
+    tools:context="com.cepgoz.kou.cepgoz.SoundSaveGazete">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtSoundSaveGazeteBookName"
+            android:hint="Kitap Adı" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2Gazete">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtSoundSaveGazeteWriterName"
+            android:layout_marginTop="40dp"
+            android:hint="Yazar Adı" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewSoundSaveGazeteStartRecorder"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/mic"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="78dp"
+        android:onClick="startAudioRecorder"
+        android:layout_alignRight="@+id/linearLayout2Gazete"
+        android:layout_alignEnd="@+id/linearLayout2Gazete" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewSoundSaveGazeteStopRecorder"
+        android:layout_below="@+id/imageViewSoundSaveGazeteStartRecorder"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/stoprecord"
+        android:onClick="stopAudioRecorder"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/imageViewSoundSaveGazeteStartRecorder"
+        android:layout_alignEnd="@+id/imageViewSoundSaveGazeteStartRecorder" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewSoundSaveGazeteUploadRecord"
+        android:src="@drawable/upload"
+        android:onClick="uploadAudioRecord"
+        android:layout_below="@+id/imageViewSoundSaveGazeteStopRecorder"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/imageViewSoundSaveGazeteStopRecorder"
+        android:layout_alignEnd="@+id/imageViewSoundSaveGazeteStopRecorder" />
+
+
+</RelativeLayout>

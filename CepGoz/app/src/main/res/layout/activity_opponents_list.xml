@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="465dp"
+        android:id="@+id/listView"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_audio_call"
+            android:id="@+id/btnAudioCallActivityOpponents"
+            style="?android:attr/buttonBarButtonStyle"
+            android:background="@android:color/transparent"
+            android:textColor="@color/blue_green"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:layout_gravity="bottom" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:text="@string/btn_video_call"
+            android:id="@+id/btnVideoCallActivityOpponents"
+            style="?android:attr/buttonBarButtonStyle"
+            android:background="@android:color/transparent"
+            android:textColor="@color/blue_green"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:layout_gravity="bottom"
+            android:onClick="btnVideoCall"/>
+    </LinearLayout>
+</RelativeLayout>

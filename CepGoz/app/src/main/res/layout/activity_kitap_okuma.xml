@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/back"
+    tools:context="com.cepgoz.kou.cepgoz.KitapOkuma">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="470dp"
+                android:id="@+id/lVkitapOkuma"
+                android:minHeight="250dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Geri Sar"
+                    android:id="@+id/btnPrevBook"
+                    android:onClick="prevTrack"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="İleri Sar"
+                    android:onClick="forwardTrack"
+                    android:id="@+id/btnForwardBook" />
+
+                <Button
+                    android:onClick="stopTrack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Durdur"
+                    android:id="@+id/btnStopBook" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ekle"
+                    android:onClick="yeniKitapYukle"
+                    android:id="@+id/button" />
+            </LinearLayout>
+            <RatingBar
+                android:id="@+id/ratingBar5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textPersonName"
+        android:background="@drawable/edittextbackgroundtop"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:drawableLeft="@drawable/loginimage"
+        android:hint="Kullanıcı Adı"
+        android:ems="10"
+        android:id="@+id/edtActMainUserName" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textPassword"
+        android:hint="Şifre"
+        android:ems="10"
+        android:padding="5dp"
+        android:layout_marginTop="-5dp"
+        android:drawableLeft="@drawable/password"
+        android:background="@drawable/edittextbackgroundbottom"
+        android:id="@+id/edtActMainPassword" />
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Beni Hatırla"
+        android:id="@+id/checkBoxRememberMe" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Giriş Yap"
+        android:layout_marginTop="4dp"
+        android:onClick="login"
+        style="@style/btnStyleBeige"
+        android:id="@+id/btnActMainLogin" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kayıt ol"
+        android:onClick="Singup"
+        android:layout_marginTop="4dp"
+        style="@style/btnStyleBeige"
+        android:id="@+id/btnActMainSingup" />
+
+
+</LinearLayout>
