@@ -21,7 +21,7 @@ android {
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
+    testCompile 'junit:junit:4.13.1'
     compile files('libs/quickblox-android-sdk-chat-2.4.jar')
     compile files('libs/quickblox-android-sdk-core-2.4.jar')
     compile files('libs/quickblox-android-sdk-videochat-webrtc-2.4.jar')
