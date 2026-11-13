@@ -58,8 +58,9 @@ public class splash extends AppCompatActivity {
                         public void run() {
                             SharedPreferences pref = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
                             SharedPreferences.Editor mPrefsEditor = pref.edit();
+                            SecureCredentials.clearLegacyPlaintextPassword(pref, PREF_PASSWORD);
                             String username = pref.getString(PREF_USERNAME, "");
-                            String password = pref.getString(PREF_PASSWORD, "");
+                            String password = SecureCredentials.getDecryptedPassword(splash.this, pref, PREF_PASSWORD);
                             dialog.dismiss();
                             if ((username.length()>3 && password.length()>5)) {
                                 QBSettings.getInstance().fastConfigInit(Consts.APP_ID, Consts.AUTH_KEY, Consts.AUTH_SECRET);
@@ -68,7 +69,7 @@ public class splash extends AppCompatActivity {
                                     QBChatService.init(splash.this);
                                     chatService = QBChatService.getInstance();
                                 }
-                                giris(pref.getString(PREF_USERNAME, ""), pref.getString(PREF_PASSWORD, ""));
+                                giris(username, password);
                             } else {
                                 Intent intent = new Intent(getApplicationContext(), ActivityMain.class);
                                 startActivity(intent);
