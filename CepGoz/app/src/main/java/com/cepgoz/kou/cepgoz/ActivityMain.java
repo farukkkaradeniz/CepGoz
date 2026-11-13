@@ -67,10 +67,11 @@ public class ActivityMain extends Activity {
         dialog = new SpotsDialog(ActivityMain.this,R.style.CustomProgressBar);
         SharedPreferences pref = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         SharedPreferences.Editor mPrefsEditor = pref.edit();
+        SecureCredentials.clearLegacyPlaintextPassword(pref, PREF_PASSWORD);
         String username = pref.getString(PREF_USERNAME, "");
-        String password = pref.getString(PREF_PASSWORD, "");
+        String password = SecureCredentials.getDecryptedPassword(this, pref, PREF_PASSWORD);
         if((username.length()>2&& password.length()>5)) {
-            giris(pref.getString(PREF_USERNAME, ""),pref.getString(PREF_PASSWORD, ""));
+            giris(username, password);
         }
     }
     private void createSession(final QBUser user) {
@@ -170,7 +171,7 @@ public class ActivityMain extends Activity {
             SharedPreferences pref = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
             SharedPreferences.Editor mPrefsEditor = pref.edit();
             mPrefsEditor.putString(PREF_USERNAME, login);
-            mPrefsEditor.putString(PREF_PASSWORD, password);
+            SecureCredentials.putEncryptedPassword(this, mPrefsEditor, PREF_PASSWORD, password);
             if(cbRememberMe.isChecked())
             mPrefsEditor.putString(PREF_USER_STATE,"1");
             mPrefsEditor.commit();
